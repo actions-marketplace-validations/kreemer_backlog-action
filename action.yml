@@ -1,0 +1,31 @@
+name: 'backlog-action'
+description: 'Implement a backlog like project'
+inputs:
+  owner:
+    description: Organization which owns the project
+    required: true
+  number:
+    description: Number of the project
+    required: true
+  type: 
+    description: Type of the project, either `user` or `org`
+    default: user
+    required: false
+  github-token:
+    description: The GitHub token used to create an authenticated client
+    default: ${{ github.token }}
+    required: false
+  label:
+    description: Name of the label which should be added to newly added / reopened issues
+    required: false
+  label-description:
+    description: Description text of the label
+    required: false
+    default: Automatically added with kreemer/backlog-action
+  label-color:
+    description: Color of the label 
+    required: false
+    default: C2E0C6
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
