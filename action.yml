@@ -1,5 +1,5 @@
 name: 'backlog-action'
-description: 'Implement a backlog like project'
+description: 'Automatically add issues to a project and label it'
 inputs:
   owner:
     description: Organization which owns the project
@@ -29,3 +29,6 @@ inputs:
 runs:
   using: 'node12'
   main: 'dist/index.js'
+branding:
+  icon: 'cpu'
+  color: 'gray-dark'
