@@ -38,3 +38,8 @@ jobs:
 * `label` (Optional): Name of the label which should be added to the issue. If left blank, no label will be created and the issue won't be labelled.
 * `label-color` (Optional): Hex color without `#` for the label. 
 * `label-description` (Optional): Description of the label. 
+
+## Token
+
+The token which have to be assigned has to have the `write:org` and the `repo` scope to be fully
+functional
