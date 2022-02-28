@@ -29,7 +29,7 @@ async function run() {
   try {
     const projectResponse = await getProjectId(octokit, token, config.project.owner, config.project.number, config.project.type);
     if (projectResponse === undefined || extractProjectId(projectResponse) === undefined) {
-      core.info('Could not get project id from ' + config.project.owner + '/' + config.project.number);;
+      core.info('Could not get project id from ' + config.project.owner + '/' + config.project.number);
     } else {
       const projectId = extractProjectId(projectResponse);
     
@@ -115,7 +115,7 @@ async function getProjectId(client, token, owner, number, type) {
 
 async function addIssueToProject(client, token, projectId, issueId) {
   return client.graphql(`
-    mutation addProjectNextItemMutation ($projectId:String!, $contentId:String!) {
+    mutation addProjectNextItemMutation ($projectId:ID!, $contentId:ID!) {
       addProjectNextItem(input: {projectId: $projectId, contentId: $contentId}) {
         projectNextItem {
           id
